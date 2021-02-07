@@ -1,0 +1,89 @@
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <style>
+        body{
+            background-color: hsl(233, 14%, 35%);
+        }
+        .container{
+            background: #fff;
+            max-width: 500px;
+            width: 100%;
+            margin: 100px auto;
+            padding: 50px;
+            border-radius: 5px;
+
+            box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
+        }
+        .title{
+            font-family: 'Roboto', sans-serif;
+            font-size: 41px;
+            color: hsl(237, 25%, 15%);
+            margin: 20px;
+            margin-top: 0px;
+            border-bottom: 1px solid black;
+        }
+        button {
+            display:inline-block;
+            padding: 5px 15px;
+
+            border:0.1em solid #FFFFFF;
+            margin:0 0.3em 0.3em 0;
+            border-radius:0.12em;
+            box-sizing: border-box;
+            text-decoration:none;
+            font-family:'Roboto',sans-serif;
+            font-weight:300;
+            font-size: 25px;
+            color:hsl(235, 21%, 11%);
+            text-align:center;
+            transition: all 0.2s;
+            border-radius: 3px;
+            margin-left: 50px;
+            margin-top: 30px;
+        }
+        button:hover {
+            color:hsl(233, 11%, 84%);
+            background-color:hsl(235, 21%, 11%);
+        }
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            font-size: 20px;
+            width: 100%;
+        }
+            
+        td, th {
+            border: none;
+            text-align: left;
+            padding: 8px;
+
+            
+        } 
+        tr:nth-child(even) {
+            background-color: #8fb3e9;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+<div class="title">Results</div>
+    <table>
+        {% for i in list %}
+        <tr>
+            {% for j in i %}
+            <td>{{j}}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/frequency/"><button>back</button></a>
+</div>
+{% endblock content %}
+</body>
+</html>

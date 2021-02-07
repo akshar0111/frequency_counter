@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Frequency</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,500&display=swap" rel="stylesheet">
+    <style>
+        body{
+            background-color: hsl(233, 14%, 35%);
+        }
+        .container{
+            background: #fff;
+            max-width: 500px;
+            width: 100%;
+            margin: 200px auto;
+            padding: 50px;
+            border-radius: 5px;
+
+            box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
+        }
+        .heading{
+            font-family: 'Roboto', sans-serif;
+            font-size: 50px;
+            color: hsl(237, 25%, 15%);
+        }
+        input {
+            border: none;
+            border-bottom: 2px solid black;
+            margin-top: 30px;
+            margin-left: 35px;
+            background-color: none;
+            outline: 0;
+            font-size: 18px;
+            width: 300px;
+            font-family: 'Josefin Sans', sans-serif;
+            height: 30px;
+          }
+          
+        input:focus {
+            border-bottom: 2px solid black;
+            box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
+            background-color: none;
+            outline: 0;
+            width: 300px;
+            height: 30px;
+        }
+        button {
+            display:inline-block;
+            padding: 12px 25px;
+
+            border:0.1em solid #FFFFFF;
+            margin:0 0.3em 0.3em 0;
+            border-radius:0.12em;
+            box-sizing: border-box;
+            text-decoration:none;
+            font-family:'Roboto',sans-serif;
+            font-weight:300;
+            color:hsl(235, 21%, 11%);
+            text-align:center;
+            transition: all 0.2s;
+            border-radius: 3px;
+            margin-left: 30px;
+        }
+        button:hover {
+            color:hsl(233, 11%, 84%);
+            background-color:hsl(235, 21%, 11%);
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heading">Word Frequency Counter</div>
+    <form method='POST'>
+        {% csrf_token %}
+        <input type="url" name="raw_url" required>
+        <button>Result</button>
+    </form>
+    </div>
+</body>
+</html>
